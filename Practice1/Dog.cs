@@ -28,12 +28,14 @@ namespace Practice1
         // The computer gets confused and assigns the incoming parameter back to itself.
         // The class's actual 'age' field remains unassigned (0).
         {
-            name = dogName;
-            age = dogAge;   
-            height = dogHeight; 
-            weight = dogWeight;
-
-
+            this.name = dogName;
+            this.age = dogAge;   
+            this.height = dogHeight; 
+            this.weight = dogWeight;
+        }
+        public void currentStatus()
+        {
+            Console.WriteLine($"Name: {name}, Age: {age}, Height: {height}, Weight: {weight}");
         }
     }
 }
