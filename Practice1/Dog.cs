@@ -19,10 +19,21 @@ namespace Practice1
         public int age;
         public double height, weight;
 
-        //Creation of a method called currentStatus that displays the current status of the dog. The method is public, which means it can be accessed from outside the class. The method does not return any value, so it is declared as void. The method uses the Console.WriteLine method to display the current status of the dog.
-        public void currentStatus()
+        //This a constructor
+        //it accepts arguments when the object is is instantianted and assigns them to the fields
+
+
+        public Dog(string dogName, int dogAge, double dogHeight, double dogWeight)
+        // WARNING: 'age = age;' causes Variable Shadowing!
+        // The computer gets confused and assigns the incoming parameter back to itself.
+        // The class's actual 'age' field remains unassigned (0).
         {
-            Console.WriteLine("{0} is {1} years old, {2} meters tall and weighs {3} kilograms.", name, age, height, weight);
+            name = dogName;
+            age = dogAge;   
+            height = dogHeight; 
+            weight = dogWeight;
+
+
         }
     }
 }
