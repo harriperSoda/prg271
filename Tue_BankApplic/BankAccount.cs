@@ -8,5 +8,19 @@ namespace Tue_BankApplic
 {
     internal class BankAccount
     {
+        //private field not accesible from outside
+        private double balance;
+
+        public BankAccount(double initialBalance)
+        {
+            if (initialBalance >= 0)
+            {
+                balance = initialBalance;
+            }
+            else
+            {
+
+            }
+        }
     }
 }
