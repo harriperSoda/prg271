@@ -10,10 +10,8 @@ namespace Monday_Exercise3
     {
         static void Main(string[] args)
         {
-            GameCharacters character1 = new GameCharacters();
-            character1.name = "Aragorn";
-            character1.characterClass = "Ranger";
-            character1.health = 100;
+            GameCharacters character1 = new GameCharacters("Argon", "ranger", 90);
+            
 
             character1.displayCharacter();
         }
