@@ -15,6 +15,9 @@ namespace Thur_
         public Product(string name, double price, int quanity)
         {
             //
+            this.name = name;
+            this.price = price;
+            this.quanity = quanity;
 
 
         }
