@@ -27,13 +27,21 @@ namespace Thur_
 
             Console.WriteLine();
 
-            Console.WriteLine("ORIGINAL PRODUCTS");
-            Console.WriteLine("================================");
+            Console.WriteLine("ORIGINAL PRODUCTS\n");
+    
 
             product1.displayDetails();
             product2.displayDetails();
 
 
+            //opperator overloading
+            Product combinedProduct = product1 + product2;
+            Console.WriteLine("Combined Product");
+            combinedProduct.displayDetails();
+
+            Console.WriteLine("Polomorphism");
+
+            Console.ReadLine();
         }
     }
 }
