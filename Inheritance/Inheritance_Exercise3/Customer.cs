@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Inheritance_Exercise3
 {
-    internal class Customer
+    internal class Customer: Person
     {
+        public string loyaltyNumber { get;set; }
+
+        public Customer(double age, string name, string loyaltyNumber):base(age, name)
+        {
+            this.loyaltyNumber = loyaltyNumber;
+        }
     }
 }
