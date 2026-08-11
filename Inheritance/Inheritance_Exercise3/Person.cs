@@ -20,5 +20,12 @@ namespace Inheritance_Exercise3
 
             //function of this: set the class propety age to the value of the age parameter passed into the constructor. Same for name.
         }
+
+        public virtual void DisplayInfo() //virtual gives child classes to overwrite this method
+            //could instead return something different
+        {
+            Console.WriteLine($"Name: {name}, Age: {age}");
+        }
+
     }
 }
