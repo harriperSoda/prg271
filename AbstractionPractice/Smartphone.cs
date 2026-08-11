@@ -11,6 +11,8 @@ namespace AbstractionPractice
         //ideally fields should be private. We controll acees to them via enapsuation or getters and setters
         private string model;
         private int battery;
+        //making this a auto implemented would look like this
+        //public string Model { get; set; }
 
         //Here we are using properties to control access to the fields. We can also use auto-implemented properties                                                     
         public int Battery
