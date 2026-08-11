@@ -1,0 +1,3 @@
+# Inheritance 
+
+### Section for inheritance. 
