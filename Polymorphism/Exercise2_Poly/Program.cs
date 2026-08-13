@@ -10,6 +10,15 @@ namespace Exercise2_Poly
     {
         static void Main(string[] args)
         {
+            //instantate
+            FullTimeEmployee FTEmployee = new FullTimeEmployee();
+            FTEmployee.salary = 50000;
+            FTEmployee.CalculateSalary();
+
+            PartTimeEmployees PTEmployee = new PartTimeEmployees(-5, 30);
+            PTEmployee.CalculateSalary();
+
+
         }
     }
 }
