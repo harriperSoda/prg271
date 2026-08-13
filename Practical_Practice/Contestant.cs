@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Practical_Practice
 {
-    
-        //creation of general/asbtract classes - child classes will inherit from this class
 
-        public abstract class Contestant
+    //creation of general/asbtract classes - child classes will inherit from this class
+    //This is a constructor class as we have a general contestant, but then different types of contestants.
+    //Child classes will inherit the properties and methods of this class, but will also have their own unique properties and methods.
+    public abstract class Contestant
         {
             public int contestantNumber { get; set; }
             public string contestantName { get; set; }
