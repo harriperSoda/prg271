@@ -25,7 +25,7 @@ namespace class_test_2
 
         public void ShowThreat()
         {
-            Console.WriteLine($"Thread with ID, {threatID} and name, {threatName} at {threatLocation} has a danger level of {dangerLevel}}");
+            Console.WriteLine($"Thread with ID, {threatID} and name, {threatName} at {threatLocation} has a danger level of {dangerLevel}");
         }
     }
 }

@@ -28,9 +28,9 @@ namespace class_test_2
                 Console.WriteLine("2. Display Characters");
                 Console.WriteLine("3. Add MIssion");
                 Console.WriteLine("4. Display Missions");
-                Console.WriteLine("Add Threat");
-                Console.WriteLine("Start Opperations");
-                Console.WriteLine("Exit");
+                Console.WriteLine("5. Add Threat");
+                Console.WriteLine("6. Start Opperations");
+                Console.WriteLine("7. Exit");
 
                 if (int.TryParse(Console.ReadLine(), out int option))
                 {
