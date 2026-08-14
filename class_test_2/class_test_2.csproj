@@ -46,6 +46,7 @@
     <Compile Include="Aragon.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Gandalf.cs" />
+    <Compile Include="Gollum.cs" />
     <Compile Include="Legolas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
