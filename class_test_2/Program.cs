@@ -14,6 +14,7 @@ namespace class_test_2
             //create list for characters
             List<Character> characters = new List<Character>();
             List< MIssion> missions = new List<MIssion>();
+            List<Threats> threats = new List<Threats>();
 
             bool running = true;
 
@@ -109,7 +110,22 @@ namespace class_test_2
                                 }   
                             }
                             break;
+                        case MenuOptions.AddThreat:
+                            Console.WriteLine("Enter threat ID");
+                            int threatID = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Enter the threat name");
+                            string threatName = Console.ReadLine();
+                            Console.WriteLine("Enter the location of threat");
+                            string threatLocation = Console.ReadLine();
+                            Console.WriteLine("Enter danger level of threat");
+                            int danger_Level = int.Parse(Console.ReadLine());
+                            threats.Add(new Threats(threatID, threatName, threatLocation, danger_Level));
+                            Console.WriteLine("Threat Added SUccesfully");
+                            break;
 
+                        case MenuOptions.Exit:
+                            running = false;
+                            break;
 
 
 
