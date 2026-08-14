@@ -49,6 +49,7 @@
     <Compile Include="Gollum.cs" />
     <Compile Include="Legolas.cs" />
     <Compile Include="MenuOptions.cs" />
+    <Compile Include="MIssion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
