@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Aragon.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Gandalf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
