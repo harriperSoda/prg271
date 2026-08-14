@@ -16,6 +16,7 @@ namespace Practical_Practice
             StartVipService = 5,
             RecordIncident = 6,
             Exit = 7
-        }
+
+    }
     
 }
