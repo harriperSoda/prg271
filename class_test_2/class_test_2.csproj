@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{20BED660-E186-4A8A-AD1C-1C781A8F13CB}</ProjectGuid>
+    <ProjectGuid>{A706A1C7-C8AA-4FFF-9F34-807264158495}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Practice1</RootNamespace>
-    <AssemblyName>Practice1</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <RootNamespace>class_test_2</RootNamespace>
+    <AssemblyName>class_test_2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -43,9 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dog.cs" />
+    <Compile Include="Aragon.cs" />
+    <Compile Include="Character.cs" />
+    <Compile Include="Gandalf.cs" />
+    <Compile Include="Gollum.cs" />
+    <Compile Include="Legolas.cs" />
+    <Compile Include="MenuOptions.cs" />
+    <Compile Include="MIssion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Threats.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
