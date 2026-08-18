@@ -16,10 +16,114 @@ namespace ClassForm
         {
             InitializeComponent();
         }
+        //create object of the source
+        BindingSource src = new BindingSource();
+        List<Vehicles> myVehicle = new List<Vehicles>();
 
         private void button2_Click(object sender, EventArgs e)
         {
+            src.MovePrevious();
+        }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //object to access data handler class
+            DataHandler handler = new DataHandler();
+
+            myVehicle = handler.GetVehicles();
+
+            //set our source data
+            src.DataSource = myVehicle;
+
+            //bind data source to dataGridView
+            dataGridView1.DataSource = src;
+        }
+
+        private void buttonAllVech_Click(object sender, EventArgs e)
+        {
+            //set source of data
+            src.DataSource = myVehicle;
+
+            //Bind data source to dataGridView
+            dataGridView1.DataSource = src;
+        }
+
+        private void buttonBusses_Click(object sender, EventArgs e)
+        {
+            //create new list to hold busses
+            List<Busses> busList = new List<Busses>();
+
+            //loop and check for busses in myVehicle list
+
+            foreach(Vehicles item in myVehicle)
+            {
+                if(item is Busses){
+                    busList.Add((Busses)item);
+                }
+            }
+            src.DataSource = busList;
+        }
+
+      
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchInput = textBoxSearch.Text;
+            bool found = false;
+
+            foreach(Vehicles item in myVehicle)
+            {
+                if(item.Name == searchInput)
+                {
+                    found = true;
+                    labelName.Text = item.Name.ToString();
+                    labelPrice.Text = item.Price.ToString();
+                    labelType.Text = item.Type.ToString();
+                  
+
+                }
+            }
+            if (found == false)
+            {
+                MessageBox.Show("Vehicle not found");
+            }
+        }
+
+        private void buttonCars_Click(object sender, EventArgs e)
+        {
+            List<Cars> carList = new List<Cars>();
+            foreach (Vehicles item in myVehicle)
+            {
+                if (item is Cars)
+                {
+                    carList.Add((Cars)item);
+                }
+            }
+            src.DataSource = carList;
+            dataGridView1.DataSource = src;
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            src.MoveNext();
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            labelName.Text = "Name";
+            labelPrice.Text = "Price";
+            labelType.Text = "Type";
+            textBoxSearch.Clear();
         }
     }
 }
