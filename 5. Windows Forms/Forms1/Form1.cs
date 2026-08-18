@@ -19,6 +19,7 @@ namespace Forms1
         }
         // Create a table and index tracker
         DataTable myTable = new DataTable();
+        // Stores the index of the selected DataGridView row so it can be updated or accessed later.
         int indexRow;
 
         private void label3_Click(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace Forms1
             myTable.Rows.Add(101, "Ryan", "Zengeni", 10);
             myTable.Rows.Add(102, "Sam", "Lewis", 20);
 
-            // Bind data source to DataGridView
+            // Bind data source to DataGridView - the table created above is now the data source for the DataGridView
             dataGridViewTable.DataSource = myTable;
         }
 
@@ -67,19 +68,23 @@ namespace Forms1
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             // Add row from textboxes to DataTable
+            //adds the objects' values (from textboxes) to the table myTable rows
             myTable.Rows.Add(textBoxID.Text, textBoxName.Text, textBoxSurname.Text, textBoxAge.Text);
 
-            // Send values in DataTable to DataGridView
+            // Displays the data stored in myTable in the DataGridView.
             dataGridViewTable.DataSource = myTable;
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            // Add row from textboxes to DataTable
-            myTable.Rows.Add(textBoxID.Text, textBoxName.Text, textBoxSurname.Text, textBoxAge.Text);
+            //record which row was clicked 
+            DataGridViewRow newDataRow = dataGridViewTable.Rows[indexRow];
 
-            // Send values in DataTable to DataGridView
-            dataGridViewTable.DataSource = myTable;
+            newDataRow.Cells[0].Value = textBoxID.Text;
+            newDataRow.Cells[1].Value = textBoxName.Text;
+            newDataRow.Cells[2].Value = textBoxSurname.Text;
+            newDataRow.Cells[3].Value = textBoxAge.Text;
+
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -96,6 +101,11 @@ namespace Forms1
             textBoxName.Clear();
             textBoxSurname.Clear();
             textBoxAge.Clear();
+        }
+
+        private void dataGridViewTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }

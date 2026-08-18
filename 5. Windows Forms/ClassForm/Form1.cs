@@ -22,7 +22,7 @@ namespace ClassForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            src.MovePrevious();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -83,47 +83,11 @@ namespace ClassForm
 
             foreach(Vehicles item in myVehicle)
             {
-                if(item.Name == searchInput)
+                if(item.Name = searchInput)
                 {
                     found = true;
-                    labelName.Text = item.Name.ToString();
-                    labelPrice.Text = item.Price.ToString();
-                    labelType.Text = item.Type.ToString();
-                  
-
                 }
             }
-            if (found == false)
-            {
-                MessageBox.Show("Vehicle not found");
-            }
-        }
-
-        private void buttonCars_Click(object sender, EventArgs e)
-        {
-            List<Cars> carList = new List<Cars>();
-            foreach (Vehicles item in myVehicle)
-            {
-                if (item is Cars)
-                {
-                    carList.Add((Cars)item);
-                }
-            }
-            src.DataSource = carList;
-            dataGridView1.DataSource = src;
-        }
-
-        private void buttonNext_Click(object sender, EventArgs e)
-        {
-            src.MoveNext();
-        }
-
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-            labelName.Text = "Name";
-            labelPrice.Text = "Price";
-            labelType.Text = "Type";
-            textBoxSearch.Clear();
         }
     }
 }
