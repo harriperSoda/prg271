@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Forms1
 {
@@ -60,6 +61,41 @@ namespace Forms1
 
             // Bind data source to DataGridView
             dataGridViewTable.DataSource = myTable;
+        }
+
+        //from double click of 'add' button
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            // Add row from textboxes to DataTable
+            myTable.Rows.Add(textBoxID.Text, textBoxName.Text, textBoxSurname.Text, textBoxAge.Text);
+
+            // Send values in DataTable to DataGridView
+            dataGridViewTable.DataSource = myTable;
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            // Add row from textboxes to DataTable
+            myTable.Rows.Add(textBoxID.Text, textBoxName.Text, textBoxSurname.Text, textBoxAge.Text);
+
+            // Send values in DataTable to DataGridView
+            dataGridViewTable.DataSource = myTable;
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            //select a row and delete it from your at table inside your data grid view
+            if (dataGridViewTable.CurrentCell == null) return;
+            int rowIndex = dataGridViewTable.CurrentCell.RowIndex;
+            dataGridViewTable.Rows.RemoveAt(rowIndex);
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBoxID.Clear();
+            textBoxName.Clear();
+            textBoxSurname.Clear();
+            textBoxAge.Clear();
         }
     }
 }

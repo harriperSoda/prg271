@@ -214,6 +214,7 @@
             this.buttonAdd.TabIndex = 13;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonUpdate
             // 
@@ -223,6 +224,7 @@
             this.buttonUpdate.TabIndex = 14;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -232,6 +234,7 @@
             this.buttonDelete.TabIndex = 15;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonClear
             // 
@@ -241,6 +244,7 @@
             this.buttonClear.TabIndex = 16;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // dataGridViewTable
             // 
