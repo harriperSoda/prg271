@@ -78,12 +78,9 @@ namespace Forms1
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             //record which row was clicked 
-            DataGridViewRow newDataRow = dataGridViewTable.Rows[indexRow];
+            DataGridViewRow selectedRow = dataGridViewTable.Rows[indexRow];
 
-            newDataRow.Cells[0].Value = textBoxID.Text;
-            newDataRow.Cells[1].Value = textBoxName.Text;
-            newDataRow.Cells[2].Value = textBoxSurname.Text;
-            newDataRow.Cells[3].Value = textBoxAge.Text;
+
 
         }
 
@@ -91,7 +88,9 @@ namespace Forms1
         {
             //select a row and delete it from your at table inside your data grid view
             if (dataGridViewTable.CurrentCell == null) return;
+            //integer declared 'rowIndex' finds the row index of the current cell seleted in DataGridView
             int rowIndex = dataGridViewTable.CurrentCell.RowIndex;
+            //removes the row at the specified index from the DataGridView
             dataGridViewTable.Rows.RemoveAt(rowIndex);
         }
 
@@ -105,7 +104,7 @@ namespace Forms1
 
         private void dataGridViewTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            indexRow = e.RowIndex;
         }
     }
 }
