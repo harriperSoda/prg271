@@ -83,7 +83,7 @@ namespace ClassForm
 
             foreach(Vehicles item in myVehicle)
             {
-                if(item.Name = searchInput)
+                if(item.Name == searchInput)
                 {
                     found = true;
                 }
