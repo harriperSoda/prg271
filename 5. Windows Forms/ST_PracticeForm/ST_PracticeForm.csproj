@@ -60,6 +60,12 @@
     <Compile Include="FormCrew.Designer.cs">
       <DependentUpon>FormCrew.cs</DependentUpon>
     </Compile>
+    <Compile Include="MissionControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MissionControlForm.Designer.cs">
+      <DependentUpon>MissionControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Officer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCrew.resx">
       <DependentUpon>FormCrew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MissionControlForm.resx">
+      <DependentUpon>MissionControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

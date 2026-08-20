@@ -32,5 +32,11 @@ namespace ST_PracticeForm
             FormCrew crewForm = new FormCrew();
             crewForm.ShowDialog();
         }
+
+        private void buttonMissionControl_Click(object sender, EventArgs e)
+        {
+             MissionControlForm missionForm = new MissionControlForm();
+            missionForm.ShowDialog();
+        }
     }
 }

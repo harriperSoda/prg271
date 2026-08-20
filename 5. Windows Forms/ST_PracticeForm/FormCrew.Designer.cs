@@ -71,6 +71,7 @@
             this.buttonGoBack.TabIndex = 3;
             this.buttonGoBack.Text = "Go Back";
             this.buttonGoBack.UseVisualStyleBackColor = true;
+            this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
             // 
             // FormCrew
             // 

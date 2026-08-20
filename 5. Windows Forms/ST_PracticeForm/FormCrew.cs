@@ -33,5 +33,10 @@ namespace ST_PracticeForm
             dataGridViewCrewTable.DataSource = crewHandler.getCrewMemebrs();
 
         }
+
+        private void buttonGoBack_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
     }
 }

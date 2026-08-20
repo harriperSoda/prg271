@@ -74,6 +74,7 @@
             this.buttonMissionControl.TabIndex = 3;
             this.buttonMissionControl.Text = "Mission Control";
             this.buttonMissionControl.UseVisualStyleBackColor = true;
+            this.buttonMissionControl.Click += new System.EventHandler(this.buttonMissionControl_Click);
             // 
             // buttonEventLog
             // 
