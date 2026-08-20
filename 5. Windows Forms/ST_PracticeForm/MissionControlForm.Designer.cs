@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMissions = new System.Windows.Forms.DataGridView();
             this.buttonBackMissionControl = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMissions)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -44,13 +44,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Active Missions";
             // 
-            // dataGridView1
+            // dataGridViewMissions
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(750, 175);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewMissions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMissions.Location = new System.Drawing.Point(19, 90);
+            this.dataGridViewMissions.Name = "dataGridViewMissions";
+            this.dataGridViewMissions.Size = new System.Drawing.Size(750, 175);
+            this.dataGridViewMissions.TabIndex = 1;
             // 
             // buttonBackMissionControl
             // 
@@ -60,6 +60,7 @@
             this.buttonBackMissionControl.TabIndex = 2;
             this.buttonBackMissionControl.Text = "Back";
             this.buttonBackMissionControl.UseVisualStyleBackColor = true;
+            this.buttonBackMissionControl.Click += new System.EventHandler(this.buttonBackMissionControl_Click);
             // 
             // MissionControlForm
             // 
@@ -67,11 +68,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonBackMissionControl);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewMissions);
             this.Controls.Add(this.label1);
             this.Name = "MissionControlForm";
             this.Text = "MissionControlForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.MissionControlForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMissions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,7 +82,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewMissions;
         private System.Windows.Forms.Button buttonBackMissionControl;
     }
 }

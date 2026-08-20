@@ -38,5 +38,10 @@ namespace ST_PracticeForm
         {
             this.Close();   
         }
+
+        private void dataGridViewCrewTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

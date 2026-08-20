@@ -42,6 +42,7 @@
             this.dataGridViewCrewTable.Name = "dataGridViewCrewTable";
             this.dataGridViewCrewTable.Size = new System.Drawing.Size(776, 276);
             this.dataGridViewCrewTable.TabIndex = 0;
+            this.dataGridViewCrewTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCrewTable_CellContentClick);
             // 
             // labelCrewHeading
             // 
