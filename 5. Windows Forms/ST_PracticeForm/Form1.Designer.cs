@@ -64,6 +64,7 @@
             this.buttonCrewManagement.TabIndex = 2;
             this.buttonCrewManagement.Text = "Crew Management";
             this.buttonCrewManagement.UseVisualStyleBackColor = true;
+            this.buttonCrewManagement.Click += new System.EventHandler(this.buttonCrewManagement_Click);
             // 
             // buttonMissionControl
             // 

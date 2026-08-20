@@ -26,5 +26,11 @@ namespace ST_PracticeForm
         {
 
         }
+
+        private void buttonCrewManagement_Click(object sender, EventArgs e)
+        {
+            FormCrew crewForm = new FormCrew();
+            crewForm.ShowDialog();
+        }
     }
 }
