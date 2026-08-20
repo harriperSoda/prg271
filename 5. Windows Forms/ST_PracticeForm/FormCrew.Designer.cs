@@ -83,6 +83,7 @@
             this.Controls.Add(this.dataGridViewCrewTable);
             this.Name = "FormCrew";
             this.Text = "FormCrew";
+            this.Load += new System.EventHandler(this.FormCrew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCrewTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
