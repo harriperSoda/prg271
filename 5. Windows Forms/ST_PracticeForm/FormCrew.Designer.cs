@@ -63,6 +63,7 @@
             this.buttonAddCrew.TabIndex = 2;
             this.buttonAddCrew.Text = "Add Crew";
             this.buttonAddCrew.UseVisualStyleBackColor = true;
+            this.buttonAddCrew.Click += new System.EventHandler(this.buttonAddCrew_Click);
             // 
             // buttonGoBack
             // 

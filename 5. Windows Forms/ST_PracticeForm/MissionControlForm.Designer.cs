@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewMissions = new System.Windows.Forms.DataGridView();
             this.buttonBackMissionControl = new System.Windows.Forms.Button();
+            this.buttonAddMission = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMissions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +63,22 @@
             this.buttonBackMissionControl.UseVisualStyleBackColor = true;
             this.buttonBackMissionControl.Click += new System.EventHandler(this.buttonBackMissionControl_Click);
             // 
+            // buttonAddMission
+            // 
+            this.buttonAddMission.Location = new System.Drawing.Point(38, 323);
+            this.buttonAddMission.Name = "buttonAddMission";
+            this.buttonAddMission.Size = new System.Drawing.Size(74, 40);
+            this.buttonAddMission.TabIndex = 3;
+            this.buttonAddMission.Text = "Add Mission";
+            this.buttonAddMission.UseVisualStyleBackColor = true;
+            this.buttonAddMission.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MissionControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAddMission);
             this.Controls.Add(this.buttonBackMissionControl);
             this.Controls.Add(this.dataGridViewMissions);
             this.Controls.Add(this.label1);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewMissions;
         private System.Windows.Forms.Button buttonBackMissionControl;
+        private System.Windows.Forms.Button buttonAddMission;
     }
 }

@@ -43,5 +43,11 @@ namespace ST_PracticeForm
         {
 
         }
+
+        private void buttonAddCrew_Click(object sender, EventArgs e)
+        {
+            AddMissionForm addMission = new AddMissionForm();
+            addMission.ShowDialog();
+        }
     }
 }
