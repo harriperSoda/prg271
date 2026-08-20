@@ -66,6 +66,7 @@
     <Compile Include="MissionControlForm.Designer.cs">
       <DependentUpon>MissionControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Missioncs.cs" />
     <Compile Include="Officer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
