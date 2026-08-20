@@ -12,10 +12,16 @@ namespace ST_PracticeForm
 {
     public partial class AddMissionForm : Form
     {
-        MissionDataHandler missionDataHandler = new MissionDataHandler();
-        public AddMissionForm()
+        private MissionDataHandler missionDataHandler;
+
+        public AddMissionForm() : this(new MissionDataHandler())
+        {
+        }
+
+        internal AddMissionForm(MissionDataHandler missionDataHandler)
         {
             InitializeComponent();
+            this.missionDataHandler = missionDataHandler;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -23,9 +29,8 @@ namespace ST_PracticeForm
             Missioncs thisMission = new Missioncs(
             textBoxMission.Text, comboBoxStatus.Text);
             missionDataHandler.AddMission(thisMission);
-
-
-
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void textBoxMission_TextChanged(object sender, EventArgs e)

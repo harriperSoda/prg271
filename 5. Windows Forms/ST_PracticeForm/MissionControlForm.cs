@@ -35,8 +35,13 @@ namespace ST_PracticeForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddMissionForm addMissionForm = new AddMissionForm();
-            addMissionForm.ShowDialog();
+            AddMissionForm addMissionForm = new AddMissionForm(missionHandler);
+
+            if (addMissionForm.ShowDialog() == DialogResult.OK)
+            {
+                dataGridViewMissions.DataSource = null;
+                dataGridViewMissions.DataSource = missionHandler.getMissions();
+            }
         }
     }
 }
