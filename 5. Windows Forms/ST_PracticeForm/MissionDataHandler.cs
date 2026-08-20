@@ -26,5 +26,11 @@ namespace ST_PracticeForm
         {
             return MissionList;
         }
+
+        //method to add a new mission to the list
+        public void AddMission(Missioncs missioncs)
+        {
+            MissionList.Add(missioncs);
+        }
     }
 }

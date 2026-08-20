@@ -70,6 +70,7 @@
             this.textBoxMission.Name = "textBoxMission";
             this.textBoxMission.Size = new System.Drawing.Size(163, 20);
             this.textBoxMission.TabIndex = 3;
+            this.textBoxMission.TextChanged += new System.EventHandler(this.textBoxMission_TextChanged);
             // 
             // comboBoxStatus
             // 
@@ -92,6 +93,7 @@
             this.buttonAdd.TabIndex = 5;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // AddMissionForm
             // 
@@ -106,6 +108,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddMissionForm";
             this.Text = "AddMissionForm";
+            this.Load += new System.EventHandler(this.AddMissionForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
