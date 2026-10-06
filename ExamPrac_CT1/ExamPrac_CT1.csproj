@@ -50,6 +50,7 @@
     <Compile Include="Gollum.cs" />
     <Compile Include="InvalidDangerLevelException.cs" />
     <Compile Include="Legolas.cs" />
+    <Compile Include="MenuOptions.cs" />
     <Compile Include="Mission.cs" />
     <Compile Include="MissionAlreadyCompletedException.cs" />
     <Compile Include="Program.cs" />
