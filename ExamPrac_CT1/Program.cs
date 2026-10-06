@@ -168,47 +168,55 @@ namespace ExamPrac_CT1
             Console.Write("Enter mission completion status: ");
             string completionStatus = Console.ReadLine();
 
-            switch (missionType)
+            try
             {
-                case 1:
-                    //create SearchMission object
-                    SearchMission searchMission = new SearchMission(
-                        missionId,
-                        name,
-                        location,
-                        dangerLevel,
-                        completionStatus);
-                    missions.Add(searchMission);
-                    break;
 
-                case 2:
-                    RescueMission rescueMission = new RescueMission(
-                        missionId,
-                        name,
-                        location,
-                        dangerLevel,
-                        completionStatus);
-                    //add to missions list
-                    missions.Add(rescueMission);
-                    break;
+                switch (missionType)
+                {
+                    case 1:
+                        //create SearchMission object
+                        SearchMission searchMission = new SearchMission(
+                            missionId,
+                            name,
+                            location,
+                            dangerLevel,
+                            completionStatus);
+                        missions.Add(searchMission);
+                        break;
 
-                case 3:
-                    CombatMission combatMission = new CombatMission(
-                        missionId,
-                        name,
-                        location,
-                        dangerLevel,
-                        completionStatus);
-                    //add to missions list
-                    missions.Add(combatMission);
-                    break;
+                    case 2:
+                        RescueMission rescueMission = new RescueMission(
+                            missionId,
+                            name,
+                            location,
+                            dangerLevel,
+                            completionStatus);
+                        //add to missions list
+                        missions.Add(rescueMission);
+                        break;
+
+                    case 3:
+                        CombatMission combatMission = new CombatMission(
+                            missionId,
+                            name,
+                            location,
+                            dangerLevel,
+                            completionStatus);
+                        //add to missions list
+                        missions.Add(combatMission);
+                        break;
+                }
+            }
+            catch(InvalidDangerLevelException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
         static void ShowMissions(List<Mission> missions)
         {
             foreach(Mission mission in missions)
             {
-                mission.startMission();
+                mission.showMission();
             }
         }
         static void AddThreat(List<Threat> threats)
@@ -217,17 +225,27 @@ namespace ExamPrac_CT1
             int threatID = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter threat name: ");
             string name = Console.ReadLine();
-            Console.WriteLine("Enter threat Location; ");
+            Console.WriteLine("Enter threat Location: ");
             string location = Console.ReadLine();
             Console.WriteLine("Enter threat danger level: ");
             int dangerLevel = int.Parse(Console.ReadLine());
 
-            Threat threat = new Threat(
+            try
+            {
+                Threat threat = new Threat(
                 threatID,
                 name,
                 location,
                 dangerLevel);
-            threats.Add(threat);
+                threats.Add(threat);
+            }
+            catch(InvalidDangerLevelException ex) //Invalid... is the type of expcetion the catch is looking for. ex is the variable name of the exception object. You can call it whatever you want, but ex is common.
+            {
+                Console.WriteLine(ex.Message); //ex.Message is a property of the exception object that contains the error message associated with the exception.
+            }
+
+
+            
         }
     }
 

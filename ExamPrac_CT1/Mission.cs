@@ -30,6 +30,7 @@ namespace ExamPrac_CT1
             this.completionStatus = completionStatus;
         }
 
+        public abstract void showMission();
         public abstract void startMission();
     }
 }

@@ -14,9 +14,22 @@ namespace ExamPrac_CT1
             this.missionTypeCombat  = "Combat";
         }
 
+        public override void showMission()
+        {
+            Console.WriteLine($"You are engaging in a combat mission at {location}");
+            Console.WriteLine($"Mission ID: {missionId}");
+            Console.WriteLine($"Mission Name: {name}");
+            Console.WriteLine($"Mission Danger Level: {dangerLevel}");
+            Console.WriteLine($"Mission Completion Status: {completionStatus}");
+        }
+
         public override void startMission()
         {
-            Console.WriteLine($"Starting combat mission at {location}");
+            if (completionStatus == "complete")
+            {
+                throw new MissionAlreadyCompletedException("This mission is already complete");
+            }
+            Console.WriteLine($"Starting combat mission: {name} at {location}");
         }
     }
 }
