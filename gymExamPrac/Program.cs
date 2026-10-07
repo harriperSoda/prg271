@@ -11,8 +11,6 @@ namespace gymExamPrac
         static void Main(string[] args)
 
         //creation of lists to hold members, training sessions and equipment
- 
-
         {
             List<GymMembers> members = new List<GymMembers>();
             List<Sessions> trainingSessions = new List<Sessions>();
@@ -33,47 +31,51 @@ namespace gymExamPrac
                 Console.WriteLine("6. Display Equipment");
                 Console.WriteLine("7. Start Gym Operations");
                 Console.WriteLine("8. Exit");
-            }
 
-            //get user input
-            if(int.TryParse(Console.ReadLine(), out int choice))
-            {
-                //begin switch but first need to create instance of enum
-                MenuEnum menuEnum = (MenuEnum)choice; //cast the choice into the MenuEnum type
-
-                switch (menuEnum)
+                //get user input
+                if(int.TryParse(Console.ReadLine(), out int choice))
                 {
-                    case MenuEnum.AddMember:
-                        break;
+                    //begin switch but first need to create instance of enum
+                    MenuEnum menuEnum = (MenuEnum)choice; //cast the choice into the MenuEnum type
 
-                    case MenuEnum.DisplayMembers:
-                        break;
+                    switch (menuEnum)
+                    {
+                        case MenuEnum.AddMember:
+                            //AddMember(members);
+                            break;
 
-                    case MenuEnum.AddTrainingSession:
-                        break;
+                        case MenuEnum.DisplayMembers:
+                            break;
 
-                    case MenuEnum.DisplayTrainingSessions:
-                        break;
+                        case MenuEnum.AddTrainingSession:
+                            break;
 
-                    case MenuEnum.AddEquipment:
-                        break;
+                        case MenuEnum.DisplayTrainingSessions:
+                            break;
 
-                    case MenuEnum.DisplayEquipment:
-                        break;
+                        case MenuEnum.AddEquipment:
+                            break;
 
-                    case MenuEnum.StartGymOpeations:
-                        break;
+                        case MenuEnum.DisplayEquipment:
+                            break;
 
-                    case MenuEnum.Exit:
-                        running = false;
-                        break;
+                        case MenuEnum.StartGymOpeations:
+                            break;
+
+                        case MenuEnum.Exit:
+                            running = false;
+                            break;
+                    }
                 }
-            }
 
-            
+            }         
+        }
 
+        static void AddMember(List<GymMembers> members)
+        {
 
-            
         }
     }
+
+   
 }
