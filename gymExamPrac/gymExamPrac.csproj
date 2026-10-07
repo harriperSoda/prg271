@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Bodybuilder.cs" />
     <Compile Include="CardioSession.cs" />
+    <Compile Include="GymEquipment.cs" />
     <Compile Include="GymMembers.cs" />
+    <Compile Include="MenuEnum.cs" />
     <Compile Include="MobilitySession.cs" />
     <Compile Include="Powerlifter.cs" />
     <Compile Include="Program.cs" />
