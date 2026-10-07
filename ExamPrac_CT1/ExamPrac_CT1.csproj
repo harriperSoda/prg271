@@ -48,6 +48,7 @@
     <Compile Include="CombatMission.cs" />
     <Compile Include="Gandalf.cs" />
     <Compile Include="Gollum.cs" />
+    <Compile Include="IdExistsException.cs" />
     <Compile Include="InvalidDangerLevelException.cs" />
     <Compile Include="Legolas.cs" />
     <Compile Include="MenuOptions.cs" />

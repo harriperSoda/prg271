@@ -27,7 +27,7 @@ namespace ExamPrac_CT1
 
         public override void showMission()
         {
-            Console.WriteLine($"You are engaging in a search mission at {location}");
+            Console.WriteLine($"You are engaging in a rescue mission at {location}");
             Console.WriteLine($"Mission ID: {missionId}");
             Console.WriteLine($"Mission Name: {name}");
             Console.WriteLine($"Mission Danger Level: {dangerLevel}");

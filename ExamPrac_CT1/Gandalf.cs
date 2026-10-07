@@ -15,7 +15,7 @@ namespace ExamPrac_CT1
             this.staffType = staffType;
         }
 
-        public override void callCharacter()
+        public override void showCharacters()
             //override as it provides its own behaviour
         {
             Console.WriteLine($"Character ID: {id} called {name} is {age} years old, has a strength level of {strengthLevel} and a {staffType} weapon");

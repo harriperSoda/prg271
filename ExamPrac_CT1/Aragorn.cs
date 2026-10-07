@@ -16,7 +16,7 @@ namespace ExamPrac_CT1
             this.weapon = weapon;
         }
 
-        public override void callCharacter()
+        public override void showCharacters()
         {
             Console.WriteLine($"Character ID: {id} called {name} is {age} years old, has a strength level of {strengthLevel} and a {weapon} weapon");
         }

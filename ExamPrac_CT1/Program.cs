@@ -33,7 +33,7 @@ namespace ExamPrac_CT1
 
                 if (int.TryParse(Console.ReadLine(), out int selectedOption))
                 {
-                    MenuOptions option = (MenuOptions)selectedOption;
+                    MenuOptions option = (MenuOptions)selectedOption; //create option variable from the enum. MenuOptions, take the value after me and treat it as the MenuOption. This is casting. 
                     
                     switch(option)
                     {
@@ -75,8 +75,33 @@ namespace ExamPrac_CT1
 
             int characterType = int.Parse(Console.ReadLine()); //Come hack to using .TryParse
 
-            Console.Write("Enter character ID: ");
-            int id = int.Parse(Console.ReadLine());
+
+            int id = 0;
+            bool running = true;
+            while (running)
+            {
+                Console.Write("Enter character ID: ");
+                id = int.Parse(Console.ReadLine());
+
+                try
+                {
+                    foreach (Character character in characters)
+                    {
+                        if (character.id == id)
+                        {
+                            throw new IdExistsException($"Character with ID {id} already exists.");
+                        }
+                        
+                    }
+                    running = false;
+                }
+                   
+                catch (IdExistsException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                
+                }
+            }
 
             Console.Write("Enter character name: ");
             string name = Console.ReadLine();
@@ -86,6 +111,8 @@ namespace ExamPrac_CT1
 
             Console.Write("Enter character strength level: ");
             int strengthLevel = int.Parse(Console.ReadLine());
+
+           
 
             switch (characterType)
             {
@@ -141,7 +168,7 @@ namespace ExamPrac_CT1
             foreach(Character character in characters) //foreach (Type item in collection)
             {
                 //Console.WriteLine($"ID: {character.id}, Name: {character.name}, Age: {character.age}, Strength Level: {character.strengthLevel}");
-                character.callCharacter();
+                character.showCharacters();
             }
         }
         static void AddMission(List<Mission> missions)
@@ -227,23 +254,28 @@ namespace ExamPrac_CT1
             string name = Console.ReadLine();
             Console.WriteLine("Enter threat Location: ");
             string location = Console.ReadLine();
-            Console.WriteLine("Enter threat danger level: ");
-            int dangerLevel = int.Parse(Console.ReadLine());
 
-            try
+            bool running = true;
+            while (running)
             {
-                Threat threat = new Threat(
-                threatID,
-                name,
-                location,
-                dangerLevel);
-                threats.Add(threat);
-            }
-            catch(InvalidDangerLevelException ex) //Invalid... is the type of expcetion the catch is looking for. ex is the variable name of the exception object. You can call it whatever you want, but ex is common.
-            {
-                Console.WriteLine(ex.Message); //ex.Message is a property of the exception object that contains the error message associated with the exception.
-            }
+                Console.WriteLine("Enter threat danger level: ");
+                int dangerLevel = int.Parse(Console.ReadLine());
 
+                try
+                {
+                    Threat threat = new Threat(
+                    threatID,
+                    name,
+                    location,
+                    dangerLevel);
+                    threats.Add(threat);
+                }
+                catch (InvalidDangerLevelException ex) //Invalid... is the type of expcetion the catch is looking for. ex is the variable name of the exception object. You can call it whatever you want, but ex is common.
+                {
+                    Console.WriteLine(ex.Message); //ex.Message is a property of the exception object that contains the error message associated with the exception.
+                }
+            }
+            
 
             
         }

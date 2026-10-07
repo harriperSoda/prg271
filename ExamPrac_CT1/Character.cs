@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +21,7 @@ namespace ExamPrac_CT1
             this.strengthLevel = strengthLevel;
         }
 
-        public abstract void callCharacter();
+        public abstract void showCharacters();
         //public so method can be called from outside class
         //abstract because the parent class does not provide implementation. Child classes do that
         //void as it does not return a value
