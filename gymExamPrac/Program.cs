@@ -12,7 +12,7 @@ namespace gymExamPrac
 
         //creation of lists to hold members, training sessions and equipment
         {
-            List<GymMembers> members = new List<GymMembers>();
+            List<GymMembers> allMembers = new List<GymMembers>();
             List<Sessions> trainingSessions = new List<Sessions>();
             List<GymEquipment> equipment = new List<GymEquipment>();
 
@@ -41,10 +41,11 @@ namespace gymExamPrac
                     switch (menuEnum)
                     {
                         case MenuEnum.AddMember:
-                            //AddMember(members);
+                            AddMember(allMembers);
                             break;
 
                         case MenuEnum.DisplayMembers:
+                            DisplayMembers(allMembers);
                             break;
 
                         case MenuEnum.AddTrainingSession:
@@ -73,9 +74,57 @@ namespace gymExamPrac
 
         static void AddMember(List<GymMembers> members)
         {
+            Console.WriteLine("Enter member type");
+            Console.WriteLine("1. Bodybuilder");
+            Console.WriteLine("2. Powerlifter");
+            Console.WriteLine("3. Runner");
 
+            int membeerTypeChoice = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter member ID");
+            int memberID = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter member name");
+            string memberName = Console.ReadLine();
+            Console.WriteLine("Enter member age");
+            int memberAge = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter membership type");
+            string membershipType = Console.ReadLine();
+
+            //Thinking i need to declare the specific member type variables here to be used in the switch statement below
+         
+
+            switch (membeerTypeChoice)
+            {
+                case 1:
+                    Console.WriteLine("Enter your weight");
+                    double bodybuilderWeight = double.Parse(Console.ReadLine());
+                    //instance of Bodybuilder
+                    Bodybuilder bodybuilder = new Bodybuilder(memberID, memberName, memberAge, membershipType, bodybuilderWeight);
+                    members.Add(bodybuilder);
+                    break;
+                case 2:
+                    Console.WriteLine("Enter your best squat in KG: ");
+                    double bestSquat = double.Parse(Console.ReadLine());
+                    //instance of Powerlifter
+                    Powerlifter powerlifter = new Powerlifter(memberID, memberName, memberAge, membershipType, bestSquat);
+                    members.Add(powerlifter);
+                    break;
+                case 3:
+                    Console.WriteLine("Enter your best 5k time in minutes: ");
+                    double best5kTime = double.Parse(Console.ReadLine());
+                    //instance of Runner
+                    Runner runner = new Runner(memberID, memberName, memberAge, membershipType, best5kTime);
+                    members.Add(runner);
+                    break;
+            }
+        }
+        static void DisplayMembers(List<GymMembers> members)
+        {
+            foreach(GymMembers member in members)
+            {
+                member.DisplayMemberDetails();
+            }
         }
     }
-
    
 }

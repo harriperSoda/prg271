@@ -8,8 +8,8 @@ namespace gymExamPrac
 {
     internal class Runner: GymMembers
     {
-        public int best5kTime { get; set; }
-        public Runner(int memberID, string memberName, int memberAge, string membershipType, int best5kTime): base(memberID, memberName, memberAge, membershipType)
+        public double best5kTime { get; set; }
+        public Runner(int memberID, string memberName, int memberAge, string membershipType, double best5kTime): base(memberID, memberName, memberAge, membershipType)
         {
             this.best5kTime = best5kTime;
         }

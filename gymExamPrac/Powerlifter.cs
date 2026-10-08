@@ -8,9 +8,9 @@ namespace gymExamPrac
 {
     internal class Powerlifter: GymMembers
     {
-        public int bestSquatKg { get; set; }
+        public double bestSquatKg { get; set; }
 
-        public Powerlifter(int memberID, string memberName, int memberAge, string membershipType, int bestSquatKg): base(memberID, memberName, memberAge, membershipType)
+        public Powerlifter(int memberID, string memberName, int memberAge, string membershipType, double bestSquatKg): base(memberID, memberName, memberAge, membershipType)
         {
             this.bestSquatKg = bestSquatKg;
         }

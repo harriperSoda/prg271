@@ -8,10 +8,10 @@ namespace gymExamPrac
 {
     internal class Bodybuilder: GymMembers
     {
-        public int bodyBuilderWeight { get; set; }
+        public double bodyBuilderWeight { get; set; }
 
         //creating constructor as to what the Bodybuilder class will expect and inherit
-        public Bodybuilder(int memberID, string memberName, int memberAge, string membershipType, int bodybuilderWeight) : base(memberID, memberName, memberAge, membershipType) //base says, the values we got from the constructor, pass them to the parent class. Names need to match its own constructor, not parent. 
+        public Bodybuilder(int memberID, string memberName, int memberAge, string membershipType, double bodybuilderWeight) : base(memberID, memberName, memberAge, membershipType) //base says, the values we got from the constructor, pass them to the parent class. Names need to match its own constructor, not parent. 
         {
             this.bodyBuilderWeight = bodybuilderWeight;
         }
