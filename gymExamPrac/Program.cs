@@ -49,6 +49,7 @@ namespace gymExamPrac
                             break;
 
                         case MenuEnum.AddTrainingSession:
+                            AddTrainingSession(trainingSessions);
                             break;
 
                         case MenuEnum.DisplayTrainingSessions:
@@ -123,6 +124,37 @@ namespace gymExamPrac
             foreach(GymMembers member in members)
             {
                 member.DisplayMemberDetails();
+            }
+        }
+        static void AddTraingSession(List<Sessions> trainingSessions)
+        {
+            Console.WriteLine("What training session would you like to add?");
+            Console.WriteLine("1. Strength Session");
+            Console.WriteLine("2. Cardio Session");
+            Console.WriteLine("3. Mobility Session");
+
+            int sessionChoice = int.Parse(Console.ReadLine());
+
+            switch (sessionChoice)
+            {
+                case 1:
+                    Console.WriteLine("Enter session ID"); //wanna change this to eventualy just increment the session ID automatically
+                    int sessionID = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter session name");
+                    string sessionName = Console.ReadLine();
+                    Console.WriteLine("Enter session duration in minutes");
+                    int sessionDurationMin = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter session difficulty");
+                    string sessionDifficulty = Console.ReadLine();
+                    Console.WriteLine("Enter session completion status");
+                    string sessionCompletionStatus = Console.ReadLine();
+
+                    Console.WriteLine("Enter the sessions objective");
+                    string sessionObjective = Console.ReadLine();
+
+                    StrengthSession strengthSession = new StrengthSession(sessionID, sessionName, sessionDurationMin, sessionDifficulty, sessionCompletionStatus, sessionObjective);
+                    trainingSessions.Add(strengthSession);
+                    break;
             }
         }
     }
