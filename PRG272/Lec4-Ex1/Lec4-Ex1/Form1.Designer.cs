@@ -31,9 +31,10 @@
             lstView1 = new ListView();
             No = new ColumnHeader();
             listView2 = new ListView();
+            Num = new ColumnHeader();
             button1 = new Button();
             button2 = new Button();
-            Num = new ColumnHeader();
+            button3 = new Button();
             SuspendLayout();
             // 
             // lstView1
@@ -77,11 +78,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(352, 377);
+            button3.Name = "button3";
+            button3.Size = new Size(76, 27);
+            button3.TabIndex = 4;
+            button3.Text = "Close";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(listView2);
@@ -99,5 +111,6 @@
         private Button button2;
         private ColumnHeader No;
         private ColumnHeader Num;
+        private Button button3;
     }
 }

@@ -14,7 +14,7 @@ namespace Lec4_Ex1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
 
             if (File.Exists(filepath))
             {
@@ -44,11 +44,17 @@ namespace Lec4_Ex1
 
                 numbers.Sort();
 
-                foreach(int number in numbers)
+                foreach (int number in numbers)
                 {
                     listView2.Items.Add(number.ToString());
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //close app
+            this.Close();
         }
     }
 }
