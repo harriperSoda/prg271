@@ -12,6 +12,12 @@ namespace ConsoleApp1
         {
             DataHandler handeler = new DataHandler();
             handeler.getCategories();
+            
+
+        
+
+            handeler.insertData();
+
             Console.ReadLine();
         }
     }
