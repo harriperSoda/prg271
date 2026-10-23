@@ -47,6 +47,7 @@
     <Compile Include="Bookings.cs" />
     <Compile Include="FtinessAssBooking.cs" />
     <Compile Include="Members.cs" />
+    <Compile Include="MenuOpts.cs" />
     <Compile Include="PersonalTrainingBooking.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
