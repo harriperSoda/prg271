@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AthleteMember.cs" />
+    <Compile Include="Bookings.cs" />
+    <Compile Include="FtinessAssBooking.cs" />
+    <Compile Include="Members.cs" />
+    <Compile Include="PersonalTrainingBooking.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RehabSessionBooking.cs" />
+    <Compile Include="StandardMember.cs" />
+    <Compile Include="StudentMember.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
