@@ -13,6 +13,7 @@ namespace PracPrac_Hiking1
 
             List<HikingTrail> hikingTrails = new List<HikingTrail>();
 
+
             while (true)
             {
 
@@ -59,6 +60,10 @@ namespace PracPrac_Hiking1
 
                                         Console.WriteLine("Enter elevation gain");
                                         double trailElevation = CheckElevation();
+
+                                        MountainTrail mTrail = new MountainTrail(
+                                            trailID, trailName, trailDistance, trailDifficulty, trailDuration, trailElevation);
+                                        hikingTrails.Add(mTrail);
                                         break;
 
                                     case 2: //Forest trail
@@ -79,11 +84,19 @@ namespace PracPrac_Hiking1
 
                                         Console.WriteLine("Enter wildlife risk: ");
                                         string FwildLifeRisk = CheckWildRisk();
+
+                                        ForestTrail fTrail = new ForestTrail(
+                                            FtrailID, FtrailName, FtrailDistance, FtrailDifficulty, FtrailDuration, FwildLifeRisk);
+                                        hikingTrails.Add(fTrail);
                                         break;
 
                                 }
                             }
 
+                            break;
+                        case Menu.DisplayTrails:
+
+                            ShowMembers(hikingTrails);
                             break;
 
                     }
@@ -238,6 +251,14 @@ namespace PracPrac_Hiking1
                 }
 
             }
+        }
+        public static void ShowMembers(List<HikingTrail> trails)
+        {
+            foreach(HikingTrail aTrail in trails)
+            {
+                aTrail.DisplayTrail();
+            }
+
         }
     }
 }

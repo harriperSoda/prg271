@@ -24,6 +24,11 @@ namespace PracPrac_Hiking1
         {
             throw new NotImplementedException();
         }
+        public override void DisplayTrail()
+        {
+            Console.WriteLine($"Trail ID {TrailID}");
+            Console.WriteLine($"Trail Name {TrailName}");
+        }
 
     }
 }

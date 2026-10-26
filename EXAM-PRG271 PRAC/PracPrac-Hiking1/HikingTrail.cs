@@ -25,5 +25,6 @@ namespace PracPrac_Hiking1
         }
 
         public abstract void StartTrail();
+        public abstract void DisplayTrail();
     }
 }
