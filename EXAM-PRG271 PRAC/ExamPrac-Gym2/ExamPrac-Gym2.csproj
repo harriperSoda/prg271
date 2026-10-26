@@ -45,13 +45,16 @@
   <ItemGroup>
     <Compile Include="AthleteMember.cs" />
     <Compile Include="Bookings.cs" />
+    <Compile Include="FitnessAssesmentActivity.cs" />
     <Compile Include="FtinessAssBooking.cs" />
     <Compile Include="Members.cs" />
     <Compile Include="MenuOpts.cs" />
     <Compile Include="Passes.cs" />
+    <Compile Include="PersonalTrainingActivity.cs" />
     <Compile Include="PersonalTrainingBooking.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RehabilitationActivity.cs" />
     <Compile Include="RehabSessionBooking.cs" />
     <Compile Include="StandardMember.cs" />
     <Compile Include="StudentMember.cs" />

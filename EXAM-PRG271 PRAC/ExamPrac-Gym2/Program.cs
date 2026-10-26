@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ExamPrac_Gym2
 {
@@ -65,6 +66,7 @@ namespace ExamPrac_Gym2
                             break;
 
                         case MenuOpts.StartGymFloorActivities:
+                            StartGymFloorActivities();
                             break;
 
                         case MenuOpts.Exit:
@@ -423,6 +425,21 @@ namespace ExamPrac_Gym2
                 }
                 return passID;
             }
+        }
+
+        static void StartGymFloorActivities()
+        {
+            Thread personalThread = new Thread(PersonalTrainingActivity.PersonalTrainingAct);
+            Thread fitnessThread = new Thread(FitnessAssesmentActivity.FitnessAssesmentAct);
+            Thread rehabilitationThread = new Thread(RehabilitationActivity.RehabilitationAct);
+
+            personalThread.Start();
+            fitnessThread.Start();
+            rehabilitationThread.Start();
+
+            personalThread.Join();
+            fitnessThread.Join();
+            rehabilitationThread.Join();
         }
 
         
