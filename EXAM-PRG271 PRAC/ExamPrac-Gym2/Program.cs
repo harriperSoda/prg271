@@ -61,6 +61,7 @@ namespace ExamPrac_Gym2
                             break;
 
                         case MenuOpts.DisplayAccessPasses:
+                            ShowAccessPasses(passID);
                             break;
 
                         case MenuOpts.StartGymFloorActivities:
@@ -217,6 +218,13 @@ namespace ExamPrac_Gym2
             Console.WriteLine("Enter Member ID: ");
             
 
+        }
+        static void ShowAccessPasses(List<Passes> passes)
+        {
+            foreach(Passes pass in passes)
+            {
+                pass.DisplayPassInfo();
+            }
         }
 
 
@@ -416,6 +424,9 @@ namespace ExamPrac_Gym2
                 return passID;
             }
         }
+
+        
+     
 
 
     }
