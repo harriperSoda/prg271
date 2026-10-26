@@ -16,5 +16,10 @@ namespace ExamPrac_Gym2
         {
             Console.WriteLine("Starting fitness and body composition assessment.");
         }
+
+        public override void ShowBookingDetails()
+        {
+            Console.WriteLine($"Fitness Assessment Session - Booking ID: {BookingID}, Member Name: {MemberName}, Coach Name: {CoachName}, Duration: {Duration}, Status: {BookingStatus}");
+        }
     }
 }

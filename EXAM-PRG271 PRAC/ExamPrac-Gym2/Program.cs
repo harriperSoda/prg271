@@ -12,7 +12,7 @@ namespace ExamPrac_Gym2
         {
             List<Members> allMembers = new List<Members>();
             List<Bookings> allBookings = new List<Bookings>();
-            List<int> passID = new List<int>();
+            List<Passes> passID = new List<Passes>();
 
 
             bool running = true;
@@ -46,14 +46,18 @@ namespace ExamPrac_Gym2
                             break;
 
                         case MenuOpts.DisplayMemebrs:
+                            ShowMembers(allMembers);
                             break;
                         case MenuOpts.AddCoachingBooking:
+                            AddCoachBooking(allBookings);
                             break;
 
                         case MenuOpts.DisplayCoachingBookings:
+                            ShowBookings(allBookings);
                             break;
 
                         case MenuOpts.AddAccessPass:
+                            AddAccessPass(passID);
                             break;
 
                         case MenuOpts.DisplayAccessPasses:
@@ -83,19 +87,19 @@ namespace ExamPrac_Gym2
                         int memberID = CheckIDNumber(allMembers);
 
                         Console.WriteLine("Enter Member Name: ");
-                        string memberName = Console.ReadLine();
+                        string memberName = CheckNames();
 
                         Console.WriteLine("Enter Member Age: ");
-                        int memberAge = CheckAge(allMembers);
+                        int memberAge = CheckAge();
 
                         Console.WriteLine("Enter Membership Months: ");
-                        int membershipMonths = int.Parse(Console.ReadLine());
+                        int membershipMonths = CheckMonths();
 
                         Console.WriteLine("Enter Current Status: ");
-                        string currentStatus = Console.ReadLine();
+                        string currentStatus = CheckStatus();
 
                         Console.WriteLine("Enter their monthly fee: ");
-                        int monthlyFee = int.Parse(Console.ReadLine());
+                        int monthlyFee = CheckFee(allMembers);
 
                         StandardMember newMember = new StandardMember(
                             memberID,
@@ -110,22 +114,22 @@ namespace ExamPrac_Gym2
 
                     case 2:
                         Console.WriteLine("Enter Member ID: ");
-                        int athleteMemberID = int.Parse(Console.ReadLine());
+                        int athleteMemberID = CheckIDNumber(allMembers);
 
                         Console.WriteLine("Enter Member Name: ");
-                        string athleteMemberName = Console.ReadLine();
+                        string athleteMemberName = CheckNames();
 
                         Console.WriteLine("Enter Member Age: ");
-                        int athleteMemberAge = int.Parse(Console.ReadLine());
+                        int athleteMemberAge = CheckAge();
 
                         Console.WriteLine("Enter Membership Months: ");
-                        int athleteMembershipMonths = int.Parse(Console.ReadLine());
+                        int athleteMembershipMonths = CheckMonths();
 
                         Console.WriteLine("Enter Current Status: ");
-                        string athleteCurrentStatus = Console.ReadLine();
+                        string athleteCurrentStatus = CheckStatus();
 
                         Console.WriteLine("Enter your sport type: ");
-                        string sportType = Console.ReadLine();
+                        string sportType = CheckSport();
 
                         AthleteMember newAthleteMember = new AthleteMember(
                             athleteMemberID,
@@ -140,19 +144,19 @@ namespace ExamPrac_Gym2
 
                     case 3:
                         Console.WriteLine("Enter Member ID: ");
-                        int studentMemberID = int.Parse(Console.ReadLine());
+                        int studentMemberID = CheckIDNumber(allMembers);
 
                         Console.WriteLine("Enter Member Name: ");
-                        string studentMemberName = Console.ReadLine();
+                        string studentMemberName = CheckNames();
 
                         Console.WriteLine("Enter Member Age: ");
-                        int studentMemberAge = int.Parse(Console.ReadLine());
+                        int studentMemberAge = CheckAge();
 
                         Console.WriteLine("Enter Membership Months: "); 
-                        int studentMembershipMonths = int.Parse(Console.ReadLine());
+                        int studentMembershipMonths = CheckMonths();
 
                         Console.WriteLine("Enter Current Status: ");
-                        string studentCurrentStatus = Console.ReadLine();
+                        string studentCurrentStatus = CheckStatus();
 
                         Console.WriteLine("Enter your academic institution: ");  
                         string academicInstitution = Console.ReadLine();
@@ -171,6 +175,53 @@ namespace ExamPrac_Gym2
             }
             
         }
+        static void ShowMembers(List<Members> allMembers)
+        {
+            foreach(Members member in allMembers)
+            {
+                member.DisplayMemberInfo();
+            }
+        }
+        static void AddCoachBooking(List<Bookings> allBookings)
+        {
+            Console.WriteLine("Enter Booking ID: ");
+            int bookingID = CheckBookingID(allBookings);
+
+            Console.WriteLine("Enter Member Name: ");
+            string memberName = CheckNames();
+
+            Console.WriteLine("Enter Coach Name: ");
+            string coachName = CheckNames();
+
+            Console.WriteLine("Enter Duration (in minutes): ");
+            int duration = CheckDuration();
+
+            Console.WriteLine("Enter Booking Status: ");
+            string status = CheckBookingStatus();
+
+
+
+        }
+        static void ShowBookings(List<Bookings> allBookings)
+        {
+            foreach(Bookings booking in allBookings)
+            {
+                booking.ShowBookingDetails();
+            }
+        }
+        static void AddAccessPass(List<Passes> passes)
+        {
+            Console.WriteLine("Enter Access Pass ID: ");
+            int passID = CheckPassID(passes);
+
+            Console.WriteLine("Enter Member ID: ");
+            
+
+        }
+
+
+        
+        //Validation methods
 
         static int CheckIDNumber(List<Members> allMembers)
         {
@@ -191,11 +242,19 @@ namespace ExamPrac_Gym2
             }
             
         }
-        static string CheckNames(List<Members> allMembers)
+        static string CheckNames()
         {
-            return "";
-        }
-        static int CheckAge(List<Members> allMembers)
+            while (true)
+            {
+                if(string.IsNullOrWhiteSpace(Console.ReadLine()))
+                {
+                    Console.WriteLine("Name cannot be empty. Please enter a valid name.");
+                    continue;
+                }
+                return Console.ReadLine();
+            }
+        } //missing character check
+        static int CheckAge()
         {
             while (true)
             {
@@ -219,6 +278,142 @@ namespace ExamPrac_Gym2
                 return givenAge;
 
 
+            }
+        }
+        static int CheckMonths()
+        {
+            while (true)
+            {
+                if(!int.TryParse(Console.ReadLine(), out int givenMonths))
+                {
+                    Console.WriteLine("Enter a number only.");
+                    continue;
+                }
+                return givenMonths;
+            }
+        }
+        static string CheckStatus()
+        {
+            string givenStatus = Console.ReadLine();
+
+            while (true)
+            {
+                if (givenStatus == "Active" || givenStatus == "Paused" || givenStatus == "Cancelled")
+                {
+                    return givenStatus;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid status. Please enter 'Active', 'Paused', or 'Cancelled'.");
+
+                }
+            }
+        }
+        static string CheckSport()
+        {
+            while (true)
+            {
+                string givenSport = Console.ReadLine();
+                
+                if(givenSport == "Squash" || givenSport == "Cycling")
+                {
+                    return givenSport;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid sport type. Please enter 'Squash' or 'Cycling'.");
+                }
+            }
+        }
+        static int CheckFee(List<Members> allmembers)
+        {
+            while (true)
+            {
+                if(!int.TryParse(Console.ReadLine(), out int givenFee))
+                {
+                    Console.WriteLine("Enter a number only.");
+                    continue;
+                }
+                if(givenFee < 0)
+                {
+                    Console.WriteLine("Fee cannot be negative. Please enter a valid fee.");
+                    continue;
+                }
+                return givenFee;
+            }
+        }
+
+        static int CheckBookingID(List<Bookings> allBookings)
+        {
+            while (true)
+            {
+                if (!int.TryParse(Console.ReadLine(), out int ID))
+                {
+                    Console.WriteLine("Enter a number only.");
+                    continue;
+                }
+                if(allBookings.Any(bookings => bookings.BookingID == ID.ToString()))
+                {
+                    Console.WriteLine("Booking ID already exists. Please enter a unique Booking ID.");
+                    continue;
+                }
+                return ID;
+            }
+        }
+        static int CheckDuration()
+        {
+            while (true)
+            {
+                if(!int.TryParse(Console.ReadLine(), out int duration)) 
+                {
+                    Console.WriteLine("Enter a number only.");
+                    continue;
+                }
+                if(duration <= 0)
+                {
+                    Console.WriteLine("Duration must be a positive number.");
+                    continue;
+                }
+                return duration;
+            }
+        }
+        static string CheckBookingStatus()
+        {
+            while (true)
+            {
+                string status = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(status))
+                {
+                    Console.WriteLine("Booking status cannot be empty. Please enter a valid status.");
+                    continue;
+                }
+                if(status ==  "Active" || status == "Paused"  || status == "Cancelled")
+                {
+                    return status;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid booking status. Please enter 'Active', 'Paused', or 'Cancelled'.");
+                    continue;
+                }
+            }
+        }
+      
+        static int CheckPassID(List<Passes> passes)
+        {
+            while (true)
+            {
+                if (!int.TryParse(Console.ReadLine(), out int passID))
+                {
+                    Console.WriteLine("Enter a numeric ID");
+                    continue;
+                }
+                if (passes.Any(pass => pass.PassID == passID))
+                {
+                    Console.WriteLine("Pass ID already exists. Please enter a unique Pass ID.");
+                    continue;
+                }
+                return passID;
             }
         }
 

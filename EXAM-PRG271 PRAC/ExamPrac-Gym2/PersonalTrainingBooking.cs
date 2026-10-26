@@ -18,5 +18,10 @@ namespace ExamPrac_Gym2
             Console.WriteLine("Starting one-one-one training session");
         }
 
+        public override void ShowBookingDetails()
+        {
+            Console.WriteLine($"Personal Training Session - Booking ID: {BookingID}, Member Name: {MemberName}, Coach Name: {CoachName}, Duration: {Duration}, Status: {BookingStatus}");
+        }
+
     }
 }

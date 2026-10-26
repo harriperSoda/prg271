@@ -24,5 +24,6 @@ namespace ExamPrac_Gym2
         }
 
         public abstract void StartBooking();
+        public abstract void ShowBookingDetails();
     }
 }
