@@ -12,7 +12,7 @@ namespace ExamPrac_Gym2
         public static void RehabilitationAct()
         {
             Console.WriteLine("Rehabilitation Activity");
-            Thread.Sleep(4000);
+            Thread.Sleep(5000);
             Console.WriteLine("Rehabilitation Activity Completed");
         }
     }

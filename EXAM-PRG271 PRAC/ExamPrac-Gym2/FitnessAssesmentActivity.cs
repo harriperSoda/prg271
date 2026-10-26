@@ -12,7 +12,7 @@ namespace ExamPrac_Gym2
         public static void FitnessAssesmentAct()
         {
             Console.WriteLine("Fitness Assessment Activity");
-            Thread.Sleep(4000);
+            Thread.Sleep(1000);
             Console.WriteLine("Fitness Assessment Activity Completed");
         }
     }

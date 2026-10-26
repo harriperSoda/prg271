@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AthleteMember.cs" />
     <Compile Include="Bookings.cs" />
+    <Compile Include="DuplicatePassIDException.cs" />
     <Compile Include="FitnessAssesmentActivity.cs" />
     <Compile Include="FtinessAssBooking.cs" />
     <Compile Include="Members.cs" />

@@ -237,20 +237,33 @@ namespace ExamPrac_Gym2
         {
             while (true)
             {
-                if (!int.TryParse(Console.ReadLine(), out int givenID))
+                try
                 {
-                    Console.WriteLine("Enter a number only.");
-                    continue;
+                    if (!int.TryParse(Console.ReadLine(), out int givenID))
+                    {
+                        Console.WriteLine("Enter a number only.");
+                        continue;
+                    }
+                    if (allMembers.Any(member => member.MemberID == givenID)) //For each member in the list, check if each members member id...
+                    {
+                        throw new DuplicatePassIDException("Member ID already exists. Please enter a unique Member ID.");
+                        
+                    }
+                    return givenID;
                 }
-                if(allMembers.Any(member => member.MemberID == givenID)) //For each member in the list, check if each members member id...
+                catch(DuplicatePassIDException ex)
                 {
-                    Console.WriteLine("ID already exists. Please enter a unique ID.");
-                    continue;
+                    Console.WriteLine(ex.Message);
                 }
-                return givenID;
+
+                //A try catch is required. Purpose: 
+                //try: try this code that might fail
+                //throw: throw an exception if the code fails
+                //catch: catch the exception and handle it gracefully
+
 
             }
-            
+
         }
         static string CheckNames()
         {

@@ -13,7 +13,7 @@ namespace ExamPrac_Gym2
        public static void PersonalTrainingAct()
         {
             Console.WriteLine("Personal Training Activity");
-            Thread.Sleep(4000);
+            Thread.Sleep(2000);
             Console.WriteLine("Personal Training Activity Completed");
         }
     }
