@@ -11,7 +11,7 @@ namespace PracPrac_Hiking1
 
         AddTrail = 1,
         DisplayTrails,
-        CompleteTrail,
+
         StartHikingDay,
         Exit
     }

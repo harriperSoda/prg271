@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace PracPrac_Hiking1
 {
@@ -23,7 +24,7 @@ namespace PracPrac_Hiking1
 
                 Console.WriteLine("1. Add Trail");
                 Console.WriteLine("2. Display Trails");
-                Console.WriteLine("3. Complete Trail");
+              
                 Console.WriteLine("4. Start Hiking Day");
                 Console.WriteLine("5. Exit");
 
@@ -96,9 +97,12 @@ namespace PracPrac_Hiking1
                             break;
                         case Menu.DisplayTrails:
 
-                            ShowMembers(hikingTrails);
+                            ShowTrails(hikingTrails);
                             break;
-
+                        //
+                        case Menu.StartHikingDay:
+                            StartActivities();
+                            break;
                     }
                 }
             }
@@ -188,7 +192,7 @@ namespace PracPrac_Hiking1
                 }
                 else
                 {
-                    Console.WriteLine("Enter a valid difficulty");
+                    Console.WriteLine("Enter a valid difficulty: Easy, Medium Hard");
                     continue;
                 }
             }
@@ -252,13 +256,24 @@ namespace PracPrac_Hiking1
 
             }
         }
-        public static void ShowMembers(List<HikingTrail> trails)
+        public static void ShowTrails(List<HikingTrail> trails)
         {
             foreach(HikingTrail aTrail in trails)
             {
                 aTrail.DisplayTrail();
             }
 
+        }
+        public static void StartActivities()
+        {
+            Thread mountainThread = new Thread(MountainHikingActivities.mountainHiking);
+            Thread forestThread = new Thread(ForestHikingActivities.ForestHike);
+
+            mountainThread.Start();
+            forestThread.Start();
+
+            mountainThread.Join();
+            forestThread.Join();
         }
     }
 }

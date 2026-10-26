@@ -44,10 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DuplicateIDException.cs" />
+    <Compile Include="ForestHikingActivities.cs" />
     <Compile Include="ForestTrail.cs" />
     <Compile Include="HikingTrail.cs" />
     <Compile Include="InvalidDistanceCustomException.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MountainHikingActivities.cs" />
     <Compile Include="MountainTrail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
