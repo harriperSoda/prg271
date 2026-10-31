@@ -114,26 +114,39 @@ namespace ExamPrac_Rescue
             //check if its empty
             while (true)
             {
-                string givenID = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(givenID))
+
+                try
                 {
-                    Console.WriteLine("You need to enter something");
-                    continue;
+                    string givenID = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(givenID))
+                    {
+                        Console.WriteLine("You need to enter something");
+                        continue;
+                    }
+                    if (!int.TryParse(givenID, out int ID))
+                    {
+                        Console.WriteLine("Enter a number");
+                        continue;
+                    }
+
+
+                    if (allUnits.Any(anID => anID.UnitID == ID))
+                    {
+                        throw new CustomDuplicateIDException("Enter a unique ID");
+
+                    }
+
+                    else
+                    {
+                        return ID;
+                    }
+
                 }
-                if (!int.TryParse(givenID, out int ID))
+                catch (CustomDuplicateIDException ex)
                 {
-                    Console.WriteLine("Enter a number");
-                    continue;
+                    Console.WriteLine(ex.Message);
                 }
-                if (allUnits.Any(anID => anID.UnitID == ID))
-                {
-                    Console.WriteLine("You have entered a duplicate ID");
-                    continue;
-                }
-                else
-                {
-                    return ID;
-                }
+                
             }
         }
         public static string CheckName()
