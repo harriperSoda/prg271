@@ -38,12 +38,30 @@ namespace Day2_Lec3_Ex1
 
                         Console.WriteLine($"First Name: {list[0]} | Last Name: {list[1]} | Job: {list[2]}");
                     }
+
+                    //Write to new text file
+                    string newPATH = @"C:\Users\VMothie\Documents\prg271\PRG272\Exam Prep\Day2-Lec3-Ex1\NewWords.txt";
+
+                    using (StreamWriter writer = new StreamWriter(newPATH))
+                    {
+                        foreach (string line in words)
+                        {
+                            List<string> list = line.Split(',').ToList();
+
+                            writer.WriteLine($"First Name: {list[0]} | Last Name: {list[1]} | Job: {list[2]}");
+
+                           
+
+                        }
+            }
                 }
             }
             catch (IOException ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
+            
 
 
         }
