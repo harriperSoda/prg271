@@ -43,6 +43,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Load Marks";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listView1
             // 
@@ -52,6 +53,8 @@
             this.listView1.Size = new System.Drawing.Size(140, 200);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -61,6 +64,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Asc";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -68,8 +72,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 42);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Asc";
+            this.button3.Text = "Dsec";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // listView2
             // 
@@ -79,6 +84,7 @@
             this.listView2.Size = new System.Drawing.Size(140, 200);
             this.listView2.TabIndex = 4;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.List;
             // 
             // Form1
             // 
