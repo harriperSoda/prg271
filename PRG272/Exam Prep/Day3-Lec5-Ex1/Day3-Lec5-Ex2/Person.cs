@@ -11,11 +11,14 @@ namespace Day3_Lec5_Ex2
         public string Name { get; set; }
         public string Surname { get; set; }
         public DateTime DOB { get; set; }
+        public int age { get; set; }
 
-        public Person(string name, string surname, DateTime dOB)
+        public Person(string name, string surname, DateTime dOB, int age)
         {
             this.Name = name;
             this.Surname = surname;
             this.DOB = dOB;
-        }    }
+            this.age = age;
+        }
+    }
 }

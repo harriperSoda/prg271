@@ -25,7 +25,7 @@ namespace Day3_Lec5_Ex2
                     {
                         foreach (Person human in people)
                         {
-                            string person = $"{human.Name}; {human.Surname}; {human.DOB}";
+                            string person = $"{human.Name}; {human.Surname}; {human.DOB}; {human.age}";
                             writer.WriteLine(person);
                         }
                     }

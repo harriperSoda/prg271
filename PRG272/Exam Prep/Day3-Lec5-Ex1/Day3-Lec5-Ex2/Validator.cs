@@ -25,5 +25,11 @@ namespace Day3_Lec5_Ex2
             }
             return true;
         }
+
+        public static int CalculateAge(DateTime dob)
+        {
+            int age = DateTime.Today.Year - dob.Year;
+            return age;
+        }
     }
 }

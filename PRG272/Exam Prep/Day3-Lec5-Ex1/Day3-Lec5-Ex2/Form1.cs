@@ -29,6 +29,7 @@ namespace Day3_Lec5_Ex2
             string name = textBoxName.Text;
             string surname = textBoxSurname.Text;
             DateTime dOB = dateTimePicker1.Value.Date;
+            int age = Validator.CalculateAge(dOB);
 
             if (!Validator.ValidateNameSurname(name))
             {
@@ -47,10 +48,10 @@ namespace Day3_Lec5_Ex2
                 return;
             }
 
-            Person newPerson = new Person(name, surname, dOB);
+            Person newPerson = new Person(name, surname, dOB, age);
 
             person.Add(newPerson);
-            string formatedPerson = $"{newPerson.Name}; {newPerson.Surname}; {newPerson.DOB}";
+            string formatedPerson = $"{newPerson.Name}; {newPerson.Surname}; {newPerson.DOB}, {newPerson.age}";
             listView1.Items.Add(formatedPerson);
 
 
