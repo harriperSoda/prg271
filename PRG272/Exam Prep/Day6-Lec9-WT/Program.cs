@@ -10,6 +10,13 @@ namespace Day6_Lec9_WT
     {
         static void Main(string[] args)
         {
+            DataHandler handler = new DataHandler();
+            //handler.GetCategories();
+            //handler.InsertData();
+            //handler.UpdateData();
+            //handler.DeleteData();
+            handler.GetSingularValue();
+            Console.ReadLine();
         }
     }
 }
